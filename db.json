@@ -1,0 +1,29 @@
+{
+  "seller": [
+    {
+      "name": "1",
+      "password": "1",
+      "email": "1",
+      "id": 1
+    },
+    {
+      "name": "Namrata",
+      "password": "Namrata",
+      "email": "namrata",
+      "id": 2
+    },
+    {
+      "name": "Harshavardhan",
+      "password": "Harshavardhan",
+      "email": "Harshavardhan",
+      "id": 3
+    },
+    {
+      "name": "1",
+      "password": "1",
+      "email": "1",
+      "id": 4
+    }
+  ],
+  "seller-auth": []
+}
