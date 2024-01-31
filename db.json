@@ -35,8 +35,29 @@
     {
       "name": "Harshavardhan",
       "password": "12345",
-      "email": "h@gmail.com", 
+      "email": "h@gmail.com",
       "id": 1
     }
+  ],
+  "products": [
+    {
+      "name": "APPLE",
+      "price": "70000",
+      "category": "SMARTPHONES",
+      "color": "WHITE",
+      "image": "../assets/images/",
+      "description": "An Apple Item",
+      "id": 0
+    },
+    {
+      "name": "SAMSUNG",
+      "price": "40000",
+      "color": "White",
+      "category": "SMARTPHONES",
+      "image": "../assets/images/",
+      "description": "Samsung Item",
+      "id": 1
+    }
+  
   ]
 }
