@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit{
 
   title = 'Naviagation'
   menuType:string = ''
-
+  sellerName:string = '';
 
   constructor(private route:Router) {}
 
@@ -23,6 +23,12 @@ export class HeaderComponent implements OnInit{
           console.warn('Inside Seller Are');
           this.menuType = 'seller';
 
+          if(localStorage.getItem('seller')) {
+            let sellerStore = localStorage.getItem('seller');
+            let sellerData = sellerStore &&  JSON.parse(sellerStore)[0];
+            this.sellerName = sellerData.name;
+          }
+
         }  else {
           console.warn('Inside Default Area ');
           this.menuType = 'default';
@@ -31,7 +37,10 @@ export class HeaderComponent implements OnInit{
     })
   }
 
-
+  logout() {
+    localStorage.removeItem('seller');
+    this.route.navigate(['/'])
+  }
 
 
 }

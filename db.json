@@ -30,13 +30,13 @@
       "name": "1",
       "password": "1",
       "email": "1",
-      "id": 1
+      "id": 0
     },
     {
-      "name": "11",
-      "password": "11",
-      "email": "11",
-      "id": 2
+      "name": "Harshavardhan",
+      "password": "12345",
+      "email": "h@gmail.com", 
+      "id": 1
     }
   ]
 }
