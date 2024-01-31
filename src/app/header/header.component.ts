@@ -17,10 +17,10 @@ export class HeaderComponent implements OnInit{
   ngOnInit(): void {
     this.route.events.subscribe((route:any) => {
       if(route.url) {
-        console.warn('Route-',route.url);
+        // console.warn('Route-',route.url);
         
         if(localStorage.getItem('seller') && route.url.includes('seller')) {
-          console.warn('Inside Seller Are');
+          // console.warn('Inside Seller Are');
           this.menuType = 'seller';
 
           if(localStorage.getItem('seller')) {
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit{
           }
 
         }  else {
-          console.warn('Inside Default Area ');
+          // console.warn('Inside Default Area ');
           this.menuType = 'default';
       } 
       }
