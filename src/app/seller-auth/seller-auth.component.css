@@ -1,13 +1,22 @@
-a {
+/* a {
     cursor: pointer;
     color: blue;
+} */
+
+.signup, .login {
+    text-align: center;
 }
 
-.signup {
-   
-    
+.signup h1, .login h1 {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    color: blueviolet;
 }
 
-.login {
-
+.auth-toggle-link {
+    margin-top: 20px;
+    color: blueviolet;
+    font-size: medium;
+    text-align: left;
+    cursor: pointer;
 }

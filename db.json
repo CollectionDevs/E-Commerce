@@ -33,88 +33,10 @@
       "id": 1
     },
     {
-      "name": "1",
-      "password": "1",
-      "email": "1",
+      "name": "11",
+      "password": "11",
+      "email": "11",
       "id": 2
-    },
-    {
-      "name": "1",
-      "password": "1",
-      "email": "1",
-      "id": 3
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 5
-    },
-    {
-      "name": "Prakhar",
-      "password": "123",
-      "email": "pr@gmail.com",
-      "id": 6
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 9
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 12
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "password": "",
-      "email": "",
-      "id": 14
-    },
-    {
-      "name": "1",
-      "password": "1",
-      "email": "1",
-      "id": 15
     }
   ]
 }

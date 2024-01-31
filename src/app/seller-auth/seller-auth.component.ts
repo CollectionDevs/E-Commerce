@@ -11,9 +11,10 @@ import { Login, SignUp } from '../data-type';
 
 
 
-export class SellerAuthComponent implements OnInit{
+export class SellerAuthComponent implements OnInit {
 
   showLogin = true;
+  authError: string = '';
 
   constructor(private sellerSvc: SellerService, private router: Router) { }
 
@@ -24,16 +25,24 @@ export class SellerAuthComponent implements OnInit{
   onSingnup(data: SignUp) {
 
     this.sellerSvc.userSignUp(data)
-      
+
   }
 
-    onLogin(data:Login) {
-      
-    }
+  onLogin(data: any) {
+    // console.warn(data);
+    this.authError = "";
+    this.sellerSvc.userLogin(data)
+    this.sellerSvc.isLoginError.subscribe((isError) => {
+      if (isError) {
+        this.authError = "Email or Password is Incorrect"
+      }
+    })
 
-    loginTray() { this.showLogin = true}
+  }
 
-    signupTray() { this.showLogin = false }
+  loginTray() { this.showLogin = true }
+
+  signupTray() { this.showLogin = false }
 
 
 }
