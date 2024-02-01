@@ -2,7 +2,7 @@
     <div class="signup" *ngIf="!showLogin">
         <h1>Seller Sign Up</h1>
         <form #userSignup="ngForm" (ngSubmit)="onSingnup(userSignup.value)" class="commom-form">
-            <input class="form-input signup" type="text" ngModel  name="name" placeholder="Enter Name"> 
+            <input class="form-input " type="text" ngModel  name="name" placeholder="Enter Name"> 
             <input class="form-input" type="password" ngModel name="password" placeholder="Enter Password"> 
             <input class="form-input" type="email" name="email" ngModel placeholder="Enter Email"> 
             <button class="form-button">Signup</button>
@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<div class="seller-auth">
+<!-- <div class="seller-auth"> -->
     <div class="login" *ngIf="showLogin">
         <h1>Seller Log In</h1>
         <p class="error-p">{{authError}}</p>
@@ -23,4 +23,4 @@
 
         </form> 
     </div>
-</div>
+<!-- </div> -->

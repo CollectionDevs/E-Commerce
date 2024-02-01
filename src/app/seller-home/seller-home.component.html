@@ -22,8 +22,12 @@
                 <td>{{item.color}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.description}}</td>
-                <fa-icon [icon]="deleteIcn"></fa-icon>
-                
+                <td>
+                    <fa-icon  [icon]="deleteIcn" (click)="deleteProduct(item.id)"></fa-icon>
+                    <a routerLink="/seller-update-product/{{item.id}}"><fa-icon class="adjust-edit-link" [icon]="editIcn"></fa-icon></a>
+
+                </td>   
+
             </tr>
         </tbody>
     </table>

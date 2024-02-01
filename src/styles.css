@@ -39,18 +39,19 @@ body {
 
 .error-p {
     color: red;
+    text-align: center;
 }
 
 .message-p {
     color: green;
-
+    text-align: center;
 }
 
-fa-icon {
+/* fa-icon {
     text-align: center;
     color: red;
 
-}
+} */
 
 
 

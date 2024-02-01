@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../Services/product.service';
 import { Product } from '../data-type';
 
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-seller-home',
@@ -14,7 +14,9 @@ export class SellerHomeComponent implements OnInit {
   productList:undefined | Product[]
   productMessage:undefined | string;
   deleteIcn = faTrash;
-  
+  editIcn = faEdit;  
+
+
   constructor(private productSvc:ProductService) {}
 
   ngOnInit(): void {
@@ -40,6 +42,10 @@ export class SellerHomeComponent implements OnInit {
       console.warn(result);
       this.productList = result
     }) 
+  }
+
+  editProduct() {
+    
   }
 
 }

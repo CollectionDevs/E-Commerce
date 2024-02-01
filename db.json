@@ -41,6 +41,24 @@
   ],
   "products": [
     {
+      "name": "APPLE",
+      "price": "40000",
+      "color": "Black",
+      "category": "SMARTPHONES",
+      "description": "An Apple Item",
+      "image": "",
+      "id": 0
+    },
+    {
+      "name": "SAMSUNG",
+      "price": "40000",
+      "color": "White",
+      "category": "SMARTPHONES",
+      "image": "../assets/images/",
+      "description": "Samsung Item",
+      "id": 1
+    },
+    {
       "name": "Dell ",
       "price": "55000",
       "color": "Silver",
@@ -66,6 +84,15 @@
       "description": "An Oppo Product",
       "image": "../assets/images/",
       "id": 4
+    },
+    {
+      "name": "",
+      "price": "",
+      "color": "",
+      "category": "",
+      "description": "",
+      "image": "",
+      "id": 5
     }
   ]
 }
