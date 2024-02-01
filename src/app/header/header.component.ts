@@ -48,9 +48,9 @@ export class HeaderComponent implements OnInit{
   searchProduct(query:KeyboardEvent) {
     if(query) {
       const element = query.target as HTMLInputElement;
-      console.warn(element.value);
+      // console.warn(element.value);
       this.productSvc.searchProducts(element.value).subscribe((result) => {
-        console.warn(result);
+        // console.warn(result);
 
         if( result.length > 5) {
           result.length = 5;
@@ -64,6 +64,11 @@ export class HeaderComponent implements OnInit{
 
   hideSearch() {
     this.searchResult = undefined;
+  }
+
+  onSearch(val:string) {
+    console.warn(val);
+    this.route.navigate([`search/${val}`])
   }
 
 }
