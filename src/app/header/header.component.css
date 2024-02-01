@@ -28,7 +28,7 @@
 .nav li a {
     color: blueviolet;
 }
- 
+
 .nav .nav-search input {
     height: 35px;
     width: fit-content;
@@ -37,14 +37,14 @@
     color: blueviolet;
 }
 
-.nav .nav-search  {
+.nav .nav-search {
     display: flex;
-    margin-top: 5px;    
+    margin-top: 5px;
     margin-left: 5%;
     margin-right: 5%;
-    }
+}
 
-    
+
 
 .nav .nav-search button {
     height: 39px;
@@ -58,4 +58,27 @@ h1 a {
     color: blueviolet;
     text-decoration: none;
 }
+
+.suggested-result {
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    background-color: #fff;
+    width: 300px;
+    top: 40px;
+    border: 1px solid #ddd;
+}
+
+
+.suggested-result li{
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.suggested-result a{
+    cursor: pointer;
+    color:blueviolet
+}
+
+
 

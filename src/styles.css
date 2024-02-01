@@ -53,7 +53,16 @@ body {
 
 } */
 
+.carousel-caption {
+    background-color: #eb64172d;
+    border-radius: 5px;
 
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color:  #00000082;
+    border: 5px;
+}
 
 
  

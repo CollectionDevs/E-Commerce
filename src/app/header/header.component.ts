@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../Services/product.service';
+import { Product } from '../data-type';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +13,9 @@ export class HeaderComponent implements OnInit{
   title = 'Naviagation'
   menuType:string = ''
   sellerName:string = '';
+  searchResult: undefined | Product[];
 
-  constructor(private route:Router) {}
+  constructor(private route:Router, private productSvc:ProductService) {}
 
   ngOnInit(): void {
     this.route.events.subscribe((route:any) => {
@@ -42,5 +45,25 @@ export class HeaderComponent implements OnInit{
     this.route.navigate(['/'])
   }
 
+  searchProduct(query:KeyboardEvent) {
+    if(query) {
+      const element = query.target as HTMLInputElement;
+      console.warn(element.value);
+      this.productSvc.searchProducts(element.value).subscribe((result) => {
+        console.warn(result);
+
+        if( result.length > 5) {
+          result.length = 5;
+        }
+       
+        this.searchResult = result;
+
+      })
+    }
+  }
+
+  hideSearch() {
+    this.searchResult = undefined;
+  }
 
 }

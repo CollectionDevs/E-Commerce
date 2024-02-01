@@ -46,53 +46,45 @@
       "color": "Black",
       "category": "SMARTPHONES",
       "description": "An Apple Item",
-      "image": "",
+      "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/k/l/l/-original-imagtc5fz9spysyk.jpeg?q=70&crop=false",
       "id": 0
     },
     {
-      "name": "SAMSUNG",
-      "price": "40000",
-      "color": "White",
-      "category": "SMARTPHONES",
-      "image": "../assets/images/",
-      "description": "Samsung Item",
+      "name": "Asus Rog  Zephyrus G14 ",
+      "price": "130990",
+      "color": "Silver",
+      "category": "LAPTOPS",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/n/n/f/ga401qm-k2331ts-gaming-laptop-asus-original-imagpz5yhrzeuchr.jpeg?q=70&crop=false",
+      "description": "Boat Headset Item",
       "id": 1
     },
     {
-      "name": "Dell ",
-      "price": "55000",
-      "color": "Silver",
-      "category": "LAPTOPS",
-      "image": "../assets/images/",
-      "description": "Dell Item",
+      "name": "SAMSUNG Galaxy S24 Ultra 5G",
+      "price": "40000",
+      "color": "White",
+      "category": "SMARTPHONES",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/f/n/u/-original-imagx9egm9mgmvab.jpeg?q=70&crop=false",
+      "description": "Samsung Item",
       "id": 2
     },
     {
-      "name": "Boat ",
-      "price": "1499",
-      "color": "Silver",
-      "category": "EARBUDS",
-      "image": "../assets/images/",
-      "description": "Boat Headset Item",
+      "name": "Dell ",
+      "price": "237890",
+      "color": "Grey",
+      "category": "LAPTOPS",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/k/h/r/-original-imagz77t4hh8v4fw.jpeg?q=70&crop=false",
+      "description": "Dell Item",
       "id": 3
     },
+   
     {
-      "name": "Oppo",
-      "price": 15000,
+      "name": "bOAT",
+      "price": 1199,
       "color": "Golden",
-      "category": "SMARTPHONES",
-      "description": "An Oppo Product",
-      "image": "../assets/images/",
+      "category": "SMARTEARBUDS",
+      "description": "Wireles Earbuds ",
+      "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/4/h/b/-original-imagmuggnzwhwz6g.jpeg?q=70&crop=false",
       "id": 4
-    },
-    {
-      "name": "",
-      "price": "",
-      "color": "",
-      "category": "",
-      "description": "",
-      "image": "",
-      "id": 5
     }
   ]
 }
