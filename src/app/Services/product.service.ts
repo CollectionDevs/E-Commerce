@@ -42,7 +42,7 @@ export class ProductService {
 
   }
   trendyProducts() {
-    return this.http.get<Product[]>(`http://localhost:3000/products?q={query}`)
+    return this.http.get<Product[]>(`http://localhost:3000/products/`)
 
   }
 

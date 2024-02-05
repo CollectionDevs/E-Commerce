@@ -43,7 +43,7 @@
     {
       "name": "APPLE",
       "price": "40000",
-      "color": "Black",
+      "color": "White",
       "category": "SMARTPHONES/MOBILES",
       "description": "An Apple Item",
       "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/k/l/l/-original-imagtc5fz9spysyk.jpeg?q=70&crop=false",
@@ -55,16 +55,16 @@
       "color": "Silver",
       "category": "LAPTOPS",
       "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/n/n/f/ga401qm-k2331ts-gaming-laptop-asus-original-imagpz5yhrzeuchr.jpeg?q=70&crop=false",
-      "description": "Boat Headset Item",
+      "description": "Gaming stroke with satisfied graphics",
       "id": 1
     },
     {
       "name": "SAMSUNG Galaxy S24 Ultra 5G",
       "price": "40000",
-      "color": "White",
+      "color": "Black",
       "category": "SMARTPHONES/MOBILES",
       "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/f/n/u/-original-imagx9egm9mgmvab.jpeg?q=70&crop=false",
-      "description": "Samsung Item",
+      "description": "Brand new phone with some extra curved",
       "id": 2
     },
     {
@@ -73,28 +73,26 @@
       "color": "Grey",
       "category": "LAPTOPS",
       "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/k/h/r/-original-imagz77t4hh8v4fw.jpeg?q=70&crop=false",
-      "description": "Dell Item",
+      "description": "Gaming laptops for Gammers",
       "id": 3
     },
-   
     {
       "name": "bOAT",
       "price": 1199,
-      "color": "Golden",
-      "category": "SMARTEARBUDS",
-      "description": "Wireles Earbuds ",
+      "color": "Blue",
+      "category": "EARBUDS",
+      "description": "Wireles Earbuds for moodies",
       "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/4/h/b/-original-imagmuggnzwhwz6g.jpeg?q=70&crop=false",
       "id": 4
     },
-
     {
-      "name": "bOAT",
-      "price": 1199,
+      "name": "CASIO Edifice Analog Watch",
+      "price": 3165,
       "color": "Golden",
-      "category": "SMARTEARBUDS",
-      "description": "Wireles Earbuds ",
-      "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/4/h/b/-original-imagmuggnzwhwz6g.jpeg?q=70&crop=false",
-      "id": 4
+      "category": "WATCHES",
+      "description": "Watch with Stylish Design ",
+      "image":"https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
+      "id": 5
     },
 
     {
@@ -102,22 +100,10 @@
       "price": 3165,
       "color": "Golden",
       "category": "WATCHES",
-      "description": "Wireles Earbuds ",
+      "description": "Wireless Earbuds ",
       "image":"https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
-      "id": 4
-    },
-
-    {
-      "name": "CASIO Edifice Analog Watch",
-      "price": 3165,
-      "color": "Golden",
-      "category": "WATCHES",
-      "description": "Wireles Earbuds ",
-      "image":"https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
-      "id": 4
-    },
-
-
+      "id": 6
+    }
 
   ]
 }

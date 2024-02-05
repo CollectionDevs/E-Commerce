@@ -20,7 +20,7 @@ export class SellerHomeComponent implements OnInit {
   constructor(private productSvc:ProductService) {}
 
   ngOnInit(): void {
-
+                                              
     this.list();
 
   }

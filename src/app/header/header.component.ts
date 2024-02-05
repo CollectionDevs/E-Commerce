@@ -51,11 +51,11 @@ export class HeaderComponent implements OnInit{
       // console.warn(element.value);
       this.productSvc.searchProducts(element.value).subscribe((result) => {
         // console.warn(result);
-
-        if( result.length > 5) {
+        
+        if( result. length > 5) {
           result.length = 5;
         }
-       
+        
         this.searchResult = result;
 
       })
@@ -67,8 +67,13 @@ export class HeaderComponent implements OnInit{
   }
 
   onSearch(val:string) {
-    console.warn(val);
+    console.warn('Searching Entity ',val);
     this.route.navigate([`search/${val}`])
+  }
+
+  redirectToDetails(id:number) {
+    
+    // this.route.navigate(['/details/'+id])
   }
 
 }

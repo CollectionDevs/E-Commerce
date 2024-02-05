@@ -1,44 +1,22 @@
-<div class="row search-item"  >
+<div class="row search-item" *ngFor="let item of searchResult">
     <div class="col-sm-3">
-        <img src="https://rukminim2.flixcart.com/image/612/612/kwmfqfk0/watch/j/y/u/1-ax2163-armani-exchange-men-original-imag9987byr6fg86.jpeg?q=70" >
-        <div class="col-sm-8 details">
-            <h6>Product Name</h6>
-            <p>Price: 50000</p>
-            <p> <span>Color:Red </span>
-                <span>Category:Mobile</span>
-            </p>
-            <p>Product Searh UI</p>
-        </div>
-        
+        <a routerLink="/details/{{item.id}}">
+            <img
+            src="{{item.image}}"
+            />
+        </a>
     </div>
+    <div class="col-sm-8 details">
+        <h6>   <a routerLink="/details/{{item.id}}"> {{item.name}}  </a> </h6>
+        <p>{{item.price}}</p>
+        <p> <span>{{item.color}} </span>
+            <span>{{item.category}}</span>
+        </p>
+        <p>Product Searh UI</p>
+    </div>
+
 </div>
 
-<div class="row search-item"  >
-    <div class="col-sm-3">
-        <img src="https://rukminim2.flixcart.com/image/612/612/kwmfqfk0/watch/j/y/u/1-ax2163-armani-exchange-men-original-imag9987byr6fg86.jpeg?q=70" >
-        <div class="col-sm-8 details">
-            <h6>Product Name</h6>
-            <p>Price: 50000</p>
-            <p> <span>Color:Red </span>
-                <span>Category:Mobile</span>
-            </p>
-            <p>Product Searh UI</p>
-        </div>
-        
-    </div>
-</div>
 
-<div class="row search-item"  >
-    <div class="col-sm-3">
-        <img src="https://rukminim2.flixcart.com/image/612/612/kwmfqfk0/watch/j/y/u/1-ax2163-armani-exchange-men-original-imag9987byr6fg86.jpeg?q=70" >
-        <div class="col-sm-8 details">
-            <h6>Product Name</h6>
-            <p>Price: 50000</p>
-            <p> <span>Color:Red </span>
-                <span>Category:Mobile</span>
-            </p>
-            <p>Product Searh UI</p>
-        </div>
-        
-    </div>
-</div>
+
+<!-- src="https://rukminim2.flixcart.com/image/612/612/kwmfqfk0/watch/j/y/u/1-ax2163-armani-exchange-men-original-imag9987byr6fg86.jpeg?q=70"> -->
