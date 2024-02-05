@@ -71,9 +71,10 @@ export class HeaderComponent implements OnInit{
     this.route.navigate([`search/${val}`])
   }
 
+
+  //check 2nd nav
   redirectToDetails(id:number) {
-    
-    // this.route.navigate(['/details/'+id])
+    this.route.navigate(['/details/'+id])
   }
 
 }

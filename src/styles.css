@@ -20,12 +20,11 @@ body {
 
 .form-input {
     height: 35px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 35px;
-    text-align: center;
-
+    /* width: 300px; */
+    /* display: flex; */
+    margin-bottom: 20px;
+    padding-left: 15px;
+    color: blueviolet;
 }
 
 .form-button {

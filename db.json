@@ -46,7 +46,7 @@
       "color": "White",
       "category": "SMARTPHONES/MOBILES",
       "description": "An Apple Item",
-      "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/k/l/l/-original-imagtc5fz9spysyk.jpeg?q=70&crop=false",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/k/l/l/-original-imagtc5fz9spysyk.jpeg?q=70&crop=false",
       "id": 0
     },
     {
@@ -82,7 +82,7 @@
       "color": "Blue",
       "category": "EARBUDS",
       "description": "Wireles Earbuds for moodies",
-      "image":"https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/4/h/b/-original-imagmuggnzwhwz6g.jpeg?q=70&crop=false",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/4/h/b/-original-imagmuggnzwhwz6g.jpeg?q=70&crop=false",
       "id": 4
     },
     {
@@ -91,19 +91,31 @@
       "color": "Golden",
       "category": "WATCHES",
       "description": "Watch with Stylish Design ",
-      "image":"https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
+      "image": "https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
       "id": 5
     },
-
     {
       "name": "CASIO Edifice Analog Watch",
       "price": 3165,
       "color": "Golden",
       "category": "WATCHES",
       "description": "Wireless Earbuds ",
-      "image":"https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
+      "image": "https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
       "id": 6
     }
-
+  ],
+  "user": [
+    {
+      "name": "Namrata",
+      "email": "n@gmail.com",
+      "password": "124",
+      "id": 1
+    },
+    {
+      "name": "1",
+      "email": "1",
+      "password": "1",
+      "id": 2
+    }
   ]
 }
