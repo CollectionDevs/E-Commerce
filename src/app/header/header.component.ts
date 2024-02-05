@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit{
   title = 'Naviagation'
   menuType:string = ''
   sellerName:string = '';
+  userName:string = '';
+
   searchResult: undefined | Product[];
 
   constructor(private route:Router, private productSvc:ProductService) {}
@@ -30,6 +32,12 @@ export class HeaderComponent implements OnInit{
             let sellerStore = localStorage.getItem('seller');
             let sellerData = sellerStore &&  JSON.parse(sellerStore)[0];
             this.sellerName = sellerData.name;
+          } else if(localStorage.getItem('user')) {
+
+            let userStore = localStorage.getItem('user')
+            let userData = userStore && JSON.parse(userStore)[0];
+           this.userName = userData.name;
+
           }
 
         }  else {
