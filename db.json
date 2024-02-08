@@ -101,7 +101,26 @@
       "description": "Wireless Earbuds ",
       "image": "https://rukminim2.flixcart.com/image/832/832/kg2l47k0-0/watch/p/o/x/ex521-efv-600l-2avudf-casio-original-imafwdubayvnhfcq.jpeg?q=70&crop=false",
       "id": 6
+    },
+    {
+      "name": "Laptop Backpack",
+      "price": 328,
+      "color": "Black Red",
+      "category": "BAGS",
+      "description": "Laptop Bag ",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/k/w/g/casual-waterproof-laptop-backpack-office-bag-school-bag-college-original-imagsfavgmhp8zy4.jpeg?q=70",
+      "id": 7
+    },
+    {
+      "name": "School Bag",
+      "price": 329,
+      "color": "Red",
+      "category": "BAGS",
+      "description": "School bag for little one ",
+      "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/backpack/d/f/j/38-boy-and-girl-s-plus-red-minnie-cartoon-school-bag-kids-plus-original-imagrwasfzczvtyq.jpeg?q=70&crop=false",
+      "id": 8
     }
+
   ],
   "user": [
     {

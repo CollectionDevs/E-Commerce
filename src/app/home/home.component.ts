@@ -11,8 +11,9 @@ import { Product } from '../data-type';
 })
 export class HomeComponent implements OnInit {
 
+  // images = [].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  
   title='Home Page'
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   popularProducts: undefined | Product[];
   trendyProducts: undefined | Product[];
   

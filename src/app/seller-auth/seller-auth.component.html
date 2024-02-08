@@ -8,9 +8,8 @@
         <input type="text" class="form-input" placeholder="Password" name="password" ngModel required>
 
         <button class="form-button">Signup</button>
-        <a class="auth-toggle-link" (click)="loginTray()">
-            <p> Dont Have Account ? Signup Here </p>
-        </a>
+        <p>Dont Have Account ? <a class="auth-toggle-link" (click)="signupTray()">Signup</a> </p>
+
 
     </form>
 </div>
@@ -30,9 +29,8 @@
         <span class="invalid-login" *ngIf="password.touched && password.invalid">Enter Correct Password</span>
 
         <button class="form-button" [disabled]="sellerLogin.invalid">Login</button>
-        <a class="auth-toggle-link" (click)="signupTray()">
-            <p> Already Have Account ? Login Here </p>
-        </a>
+        <p>Already Have Account ? <a class="auth-toggle-link" (click)="loginTray()">Login</a> </p>
+
 
     </form>
 </div>

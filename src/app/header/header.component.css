@@ -82,7 +82,12 @@ h1 a {
 
 .suggested-result li a{
     cursor: pointer;
-    color:blueviolet
+    color:blueviolet;
+    
+}
+
+ul li a {
+    text-decoration: none;
 }
 
 
