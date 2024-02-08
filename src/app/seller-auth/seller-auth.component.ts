@@ -14,7 +14,7 @@ import { Login, SignUp } from '../data-type';
 export class SellerAuthComponent implements OnInit {
 
   showLogin = true;
-  authError: string = '';
+  authError: undefined | string = '';
 
   constructor(private sellerSvc: SellerService, private router: Router) { }
 
@@ -22,20 +22,23 @@ export class SellerAuthComponent implements OnInit {
     this.sellerSvc.reload()
   }
 
-  onSingnup(data: SignUp) {
+  onSignup(data: SignUp) {
 
-    this.sellerSvc.userSignUp(data)
+    this.sellerSvc.sellerSignUp(data)
 
   }
 
   onLogin(data: any) {
     // console.warn(data);
     this.authError = "";
-    this.sellerSvc.userLogin(data)
+    this.sellerSvc.sellerLogin(data)
     this.sellerSvc.isLoginError.subscribe((isError) => {
       if (isError) {
         this.authError = "Email or Password is Incorrect"
       }
+      setTimeout(() => {
+        this.authError = undefined;
+      }, 3000);
     })
 
   }

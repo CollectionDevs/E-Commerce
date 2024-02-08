@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SignUp } from '../data-type';
+import { Login, SignUp } from '../data-type';
 import { UserService } from '../Services/user.service';
 
 @Component({
@@ -9,20 +9,45 @@ import { UserService } from '../Services/user.service';
 })
 export class UserAuthComponent implements OnInit{
 
+  showLogin:boolean = true;
+  authError:undefined | string = '';
+
   constructor(private userSvc:UserService) {}
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
 
-  signup(data:SignUp) {
+  onSignup(data:SignUp) {
     console.warn(data);
     this.userSvc.userSignup(data)
+      
     
   }
 
-  login(data:SignUp) {
+  onLogin(data:Login) {
+    console.warn(data);
+    this.authError = '';
+    this.userSvc.userLogin(data);
+    this.userSvc.isLoginError.subscribe((isError) => {
+      if(isError) {
+        this.authError = 'Email or Password is Incorrect'
+      }
+      setTimeout(() => {
+        this.authError = undefined
+      }, 3000);
+    })
+
     
+  }
+
+  loginTray() {
+    this.showLogin = true;
+  }
+
+  signupTray() {
+    this.showLogin = false;
   }
 
 }

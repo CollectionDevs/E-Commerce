@@ -12,7 +12,7 @@ export class SellerService {
 
   isLoggedIn = new BehaviorSubject<boolean>(false)
   isLoginError = new EventEmitter<boolean>(false)
-
+  
 
   constructor(private http:HttpClient, private route:Router) { }
 
@@ -27,10 +27,10 @@ export class SellerService {
     
   // }
  
-  userSignUp(data:SignUp) {
+  sellerSignUp(data:SignUp) {
    this.http.post(`http://localhost:3000/seller-auth`,data,{observe:'response'})
     .subscribe((res) => {
-      this.isLoggedIn.next(true);
+      // this.isLoggedIn.next(true);
       localStorage.setItem('seller',JSON.stringify(res.body))
       this.route.navigate(['seller-home'])
     })
@@ -41,15 +41,15 @@ export class SellerService {
     if(localStorage.getItem('seller')) {
       this.isLoggedIn.next(true);
       this.route.navigate(['seller-home'])
-
+      this.isLoggedIn.next(true);
     }
   }
 
 
-  userLogin(data:any) {
+  sellerLogin(data:any) {
     this.http.get(`http://localhost:3000/seller-auth?email=${data.email}&password=${data.password}`,
     {observe:'response'}).subscribe((res:any) => {
-      console.warn('Enter into svc');
+      console.warn('Enter into Login SVc');
       
       if(res && res.body && res.body.length) {
         
@@ -59,6 +59,7 @@ export class SellerService {
 
       } else {
         console.warn('Log in failed');
+        this.route.navigate(['seller-auth'])
         this.isLoginError.emit(true)
         
       }

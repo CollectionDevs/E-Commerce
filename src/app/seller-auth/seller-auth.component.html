@@ -1,11 +1,11 @@
 <div *ngIf="!showLogin">
-    <h1>User Signup</h1>
-    <form #userSignup="ngForm" class="common-form" (ngSubmit)="onSingnup(userSignup.value)">
-        <input type="text" class="form-input" placeholder="Fullname" name="name" ngModel>
+    <h1>Seller Signup</h1>
+    <form #sellerSignup="ngForm" class="common-form" (ngSubmit)="onSignup(sellerSignup.value)">
+        <input type="text" class="form-input" placeholder="Fullname" name="name" ngModel required >
 
-        <input type="text" class="form-input" placeholder="Email" name="email" ngModel>
+        <input type="text" class="form-input" placeholder="Email" name="email" ngModel required>
 
-        <input type="text" class="form-input" placeholder="Password" name="password" ngModel>
+        <input type="text" class="form-input" placeholder="Password" name="password" ngModel required>
 
         <button class="form-button">Signup</button>
         <a class="auth-toggle-link" (click)="loginTray()">
@@ -19,14 +19,17 @@
 
 
 <div class="login" *ngIf="showLogin">
-    <h1>Seller Log In</h1>
+    <h1>Seller Login</h1>
     <p class="error-p">{{authError}}</p>
-    <form #userLogin="ngForm" class="common-form" (ngSubmit)="onSingnup(userLogin.value)">
+    <form #sellerLogin="ngForm" class="common-form" (ngSubmit)="onLogin(sellerLogin.value)">
 
-        <input type="text" class="form-input" placeholder="Email" name="email" ngModel>
- 
-        <input type="text" class="form-input" placeholder="Password" name="password" ngModel>
-        <button class="form-button">Login</button>
+        <input type="text" class="form-input" placeholder="Email" name="email" ngModel="email"  required #email="ngModel" email>
+        <span class="invalid-login" *ngIf="email.touched && email.invalid">Please Enter Valid Email</span>
+
+        <input type="text" class="form-input" placeholder="Password" name="password" ngModel="password" required #password="ngModel" minlength="4" maxlength="20">
+        <span class="invalid-login" *ngIf="password.touched && password.invalid">Enter Correct Password</span>
+
+        <button class="form-button" [disabled]="sellerLogin.invalid">Login</button>
         <a class="auth-toggle-link" (click)="signupTray()">
             <p> Already Have Account ? Login Here </p>
         </a>

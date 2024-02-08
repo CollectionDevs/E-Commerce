@@ -85,4 +85,14 @@ export class HeaderComponent implements OnInit{
     this.route.navigate(['/details/'+id])
   }
 
+  userLogout() {
+    if(localStorage.getItem('user')) {
+      localStorage.removeItem('user');
+      this.route.navigate(['user-auth'])
+    } else {
+      console.warn('User is not logged in yet ');
+      
+    }
+  }
+
 }

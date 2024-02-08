@@ -11,12 +11,6 @@
       "password": "Harshavardhan",
       "email": "Harshavardhan",
       "id": 2
-    },
-    {
-      "name": "1",
-      "password": "1",
-      "email": "1",
-      "id": 3
     }
   ],
   "seller-auth": [
@@ -38,9 +32,9 @@
       "id": 2
     },
     {
-      "name": "Harshavardhan",
-      "email": "h@gmail.com",
-      "password": "12345",
+      "name": "",
+      "email": "",
+      "password": "",
       "id": 3
     }
   ],
