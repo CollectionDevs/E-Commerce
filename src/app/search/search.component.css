@@ -15,13 +15,12 @@
 
 
 .search-item {
-    border: 2px solid green;
     margin: 10px auto;
+    padding: 10px;
     width: 50%;
     margin-top: 1px solid #ddd;
-    padding: 10px;
     text-align: center;
-    /* justify-content: center; */
+    border: 2px solid green;
 }
 
 .search-item img {
@@ -33,10 +32,8 @@
 }
 
 .search-item h6 {
-
     font-size: 24px;
     color: blueviolet;
-
 }
 
 .search-item p{

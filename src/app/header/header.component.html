@@ -6,19 +6,17 @@
         #searchInput
         (keyup)="searchProduct($event)" 
         (blur)="hideSearch()"
-        
         placeholder="Search For Products"
-
+        
         > 
 
-        <!-- Network Bug while Searching the Product  -->
+        <!-- Network Bug while Searching the Product keypress -->
         <button (click)="onSearch(searchInput.value)">Search</button>
         <ul class="suggested-result" *ngIf="searchResult">
             <li *ngFor="let item of searchResult">
                 <a (mousedown)="redirectToDetails(item.id)">{{item.name}}</a>
             </li>
         </ul>
-
     </div>
 
     <div [ngSwitch]="menuType">
@@ -30,18 +28,18 @@
             <li> <a href="#"></a>Cart</li>
         </ul>
 
-        <ul *ngSwitchCase="'user'">
-            <li> <a routerLink="">User Name</a></li>
-            <li> <a routerLink=""> Home </a></li>
-            <a (click)="userLogout()">Logout<li></li></a>
-            <li><a href="#">{{userName}}</a></li>
-        </ul>
-
         <ul *ngSwitchCase="'seller'">
             <li> <a routerLink="seller-add-product">Add Product</a></li>
             <li> <a routerLink="/seller-home"> List </a></li>
             <a (click)="logout()">Logout<li></li></a>
             <li> <a routerLink="seller-auth">{{sellerName }}</a></li>
+        </ul>
+
+        <ul *ngSwitchCase="'user'">
+            <li> <a routerLink="">User Name</a></li>
+            <li> <a routerLink=""> Home </a></li>
+            <a (click)="userLogout()">Logout<li></li></a>
+            <li><a href="#">{{userName}}</a></li>
         </ul>
 
     </div>

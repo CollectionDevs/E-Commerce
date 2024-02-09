@@ -120,7 +120,6 @@
       "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/backpack/d/f/j/38-boy-and-girl-s-plus-red-minnie-cartoon-school-bag-kids-plus-original-imagrwasfzczvtyq.jpeg?q=70&crop=false",
       "id": 8
     }
-
   ],
   "user": [
     {
@@ -128,6 +127,19 @@
       "email": "namrata@gmail.com",
       "password": "12345",
       "id": 1
+    },
+    {
+      "name": "Harshavardhan",
+      "email": "h@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "Gangadhar",
+      "email": "g@gmail.com",
+      "password": "12345",
+      "id": 4
     }
+  
   ]
 }

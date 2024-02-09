@@ -33,11 +33,11 @@ export class ProductService {
   }
 
   popularProducts() {
-    return this.http.get<Product[]>(`http://localhost:3000/products?_limit=4`)
+    return this.http.get<Product[]>(`http://localhost:3000/products?_limit=3`)
   }
 
   trendyProducts() {
-    return this.http.get<Product[]>(`http://localhost:3000/products/`)
+    return this.http.get<Product[]>(`http://localhost:3000/products?_limit=8`)
 
   }
 
@@ -45,5 +45,19 @@ export class ProductService {
     return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`)
   }
 
+  localAddToCart(data:Product) {
+    let cartData = [];
+    let localCart = localStorage.getItem('localCart');
+    if(!localCart) {
+      console.warn('Local Cart ');
+      localStorage.setItem('localCart',JSON.stringify([data]))
+      
+    } else {
+      console.warn('Default Local Cart');
+      cartData = JSON.parse(localCart)
+      cartData.push(data)
+      localStorage.setItem('localcart',JSON.stringify(cartData))
+    }
+  }
 
 }

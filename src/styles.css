@@ -66,8 +66,8 @@ body {
 .invalid-login {
     text-align: left;
     color: red;
-    font-size: 16px;
-    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: -20px;
 }
 
 button:disabled {

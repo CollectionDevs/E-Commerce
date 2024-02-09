@@ -13,12 +13,9 @@ export class ProductDetailsComponent implements OnInit {
   productData: undefined | Product;
   productQuantity: number = 1;
 
-
   constructor(private activateRoute: ActivatedRoute, private productSvc: ProductService) { }
 
-
   ngOnInit(): void {
-
     let productId = this.activateRoute.snapshot.paramMap.get('productId')
     console.warn(productId);
 
@@ -29,9 +26,8 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-
   handleQuantity(value: string) {
-    console.log('Valiues ', value);
+    console.log('Values ', value);
 
     if (this.productQuantity < 20 && value === 'plus') {
       this.productQuantity = this.productQuantity + 1;
@@ -40,8 +36,21 @@ export class ProductDetailsComponent implements OnInit {
 
       this.productQuantity = this.productQuantity - 1;
     }
-
   }
 
+  addToCart() {
+    if(this.productData) {
+      this.productData.quantity = this.productQuantity;
+      console.warn(this.productData);
+      if(!localStorage.getItem('user')) { 
+        console.warn(this.productData);
+        this.productSvc.localAddToCart(this.productData)
+      } else {
+        console.warn('Filled');
+        
+      }
+      
+    }
+  }
 
 }

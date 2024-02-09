@@ -19,14 +19,14 @@
 
 <div class="login" *ngIf="showLogin">
     <h1>User Login</h1>
-    <!-- <p class="error-p">{{authError}}</p> -->
+    <p class="error-p">{{authError}}</p>
     <form #userLogin="ngForm" class="common-form" (ngSubmit)="onLogin(userLogin.value)">
 
-        <input type="text" class="form-input" placeholder="Email" name="email" ngModel="email"  required #email="ngModel" email>
-        <span class="invalid-login" *ngIf="email.touched">Please Enter Correct Email</span>
+        <input type="text" class="form-input" placeholder="Email" name="email" ngModel  required #email="ngModel" email>
+        <span class="invalid-login" *ngIf="email.touched && email.invalid">Please Enter Correct Email</span>
 
-        <input type="text" class="form-input" placeholder="Password" name="password" ngModel="password" required #password="ngModel" minlength="4" maxlength="20">
-        <span class="invalid-login" *ngIf="password.touched">Enter Correct Password</span>
+        <input type="text" class="form-input" placeholder="Password" name="password" ngModel required #password="ngModel" minlength="4" maxlength="20">
+        <span class="invalid-login" *ngIf="password.touched && password.invalid">Enter Correct Password</span>
 
         <button class="form-button" [disabled]="userLogin.invalid">Login</button>
         <!-- <a class="auth-toggle-link" (click)="signupTray()">

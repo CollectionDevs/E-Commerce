@@ -14,36 +14,52 @@ export class HeaderComponent implements OnInit{
   menuType:string = ''
   sellerName:string = '';
   userName:string = '';
-
   searchResult: undefined | Product[];
 
   constructor(private route:Router, private productSvc:ProductService) {}
 
+  // ngOnInit(): void {
+  //   this.route.events.subscribe((route:any) => {
+  //     if(route.url) {
+  //       // console.warn('Route-',route.url);
+  //       if(localStorage.getItem('seller') && route.url.includes('seller')) {
+  //         // console.warn('Inside Seller Are');
+  //         this.menuType = 'seller';
+
+  //         if(localStorage.getItem('seller')) {
+  //           let sellerStore = localStorage.getItem('seller');
+  //           let sellerData = sellerStore &&  JSON.parse(sellerStore)[0];
+  //           this.sellerName = sellerData.name;
+  //         } else if(localStorage.getItem('user')) {
+  //           let userStore = localStorage.getItem('user')
+  //           let userData = userStore && JSON.parse(userStore)[0];
+  //          this.userName = userData.name;
+
+  //         }
+
+  //       }  else {
+  //         // console.warn('Inside Default Area ');
+  //         this.menuType = 'default';
+  //     } 
+  //     }
+  //   })
+  // }
+
   ngOnInit(): void {
     this.route.events.subscribe((route:any) => {
       if(route.url) {
-        // console.warn('Route-',route.url);
-        
         if(localStorage.getItem('seller') && route.url.includes('seller')) {
-          // console.warn('Inside Seller Are');
+          let sellerStore = localStorage.getItem('seller');
+          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+          this.sellerName = sellerData.name;
           this.menuType = 'seller';
-
-          if(localStorage.getItem('seller')) {
-            let sellerStore = localStorage.getItem('seller');
-            let sellerData = sellerStore &&  JSON.parse(sellerStore)[0];
-            this.sellerName = sellerData.name;
-          } else if(localStorage.getItem('user')) {
-
-            let userStore = localStorage.getItem('user')
-            let userData = userStore && JSON.parse(userStore)[0];
-           this.userName = userData.name;
-
-          }
-
-        }  else {
-          // console.warn('Inside Default Area ');
+        } else if (localStorage.getItem('user') && route.url.includes('user')) {
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore[0]);
+          this.menuType = 'user';
+        } else {
           this.menuType = 'default';
-      } 
+        }
       }
     })
   }
@@ -53,20 +69,36 @@ export class HeaderComponent implements OnInit{
     this.route.navigate(['/'])
   }
 
+  // searchProduct(query:KeyboardEvent) {
+  //   if(query) {
+  //     const element = query.target as HTMLInputElement;
+  //     // console.warn(element.value);
+  //     this.productSvc.searchProducts(element.value).subscribe((result) => {
+  //       // console.warn(result);
+        
+  //       if( result. length > 5) {
+  //         result.length = 5;
+  //       }
+        
+  //       this.searchResult = result;
+
+  //     })
+  //   }
+  // }
+
   searchProduct(query:KeyboardEvent) {
     if(query) {
       const element = query.target as HTMLInputElement;
-      // console.warn(element.value);
-      this.productSvc.searchProducts(element.value).subscribe((result) => {
-        // console.warn(result);
-        
-        if( result. length > 5) {
-          result.length = 5;
-        }
-        
-        this.searchResult = result;
 
+      this.productSvc.searchProducts(element.value).subscribe((res) => {
+        // console.warn(res);
+        this.searchResult = res;
+        if(res.length > 5) {
+          res.length = 5;
+
+        }
       })
+      
     }
   }
 
@@ -88,7 +120,7 @@ export class HeaderComponent implements OnInit{
   userLogout() {
     if(localStorage.getItem('user')) {
       localStorage.removeItem('user');
-      this.route.navigate(['user-auth'])
+      this.route.navigate(['/user-auth'])
     } else {
       console.warn('User is not logged in yet ');
       

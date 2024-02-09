@@ -15,7 +15,9 @@ export class UserAuthComponent implements OnInit{
   constructor(private userSvc:UserService) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+    this.userSvc.reloadUser()
+
   }
 
 
@@ -26,21 +28,39 @@ export class UserAuthComponent implements OnInit{
     
   }
 
+  // onLogin(data:Login) {
+  //   console.warn(data);
+  //   this.authError = '';
+  //   this.userSvc.userLogin(data);
+  //   this.userSvc.isLoginError.subscribe((isError) => {
+  //     if(isError) {
+  //       this.authError = 'Email or Password is Incorrect'
+  //     }
+  //     setTimeout(() => {
+  //       this.authError = undefined
+  //     }, 3000);
+  //   })
+
+    
+  // }
+
+
   onLogin(data:Login) {
     console.warn(data);
-    this.authError = '';
+
     this.userSvc.userLogin(data);
     this.userSvc.isLoginError.subscribe((isError) => {
       if(isError) {
-        this.authError = 'Email or Password is Incorrect'
+        console.warn(isError);
+        this.authError = 'Please Insert Valid Credentials';
       }
       setTimeout(() => {
-        this.authError = undefined
-      }, 3000);
+        this.authError = undefined;
+      },  3000)
     })
-
     
   }
+
 
   loginTray() {
     this.showLogin = true;
