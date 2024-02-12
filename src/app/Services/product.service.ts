@@ -45,19 +45,54 @@ export class ProductService {
     return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`)
   }
 
+  // localAddToCart(data:Product) {
+  //   let cartData = [];
+  //   let localCart = localStorage.getItem('localCart');
+  //   if(!localCart) {
+  //     console.warn('Local Cart ');
+  //     localStorage.setItem('localCart',JSON.stringify([data]))
+      
+  //   } else {
+  //     cartData = JSON.parse(localCart)
+  //     cartData.push(data)
+  //     localStorage.setItem('localcart',JSON.stringify(cartData))
+  //   }
+  // }
+
+
+  // data = CartData
+  // cartData = cartItemElement
+
+  // localAddToCart(data:Product) {
+  //   let cartData = [];
+  //   let localCart = localStorage.getItem('localCart');
+  //   if(!localCart) {
+  //     console.warn('Local Cart ');
+  //     localStorage.setItem('localCart',JSON.stringify([data]))
+      
+  //   } else {
+  //     cartData = JSON.parse(localCart);
+  //     cartData.push(data);
+  //     localStorage.setItem('localCart',JSON.stringify(cartData))
+  //   }
+  // }
+
   localAddToCart(data:Product) {
     let cartData = [];
-    let localCart = localStorage.getItem('localCart');
-    if(!localCart) {
-      console.warn('Local Cart ');
+    let localcart = localStorage.getItem('localCart')
+    if(!localcart) {
+      console.warn('Local Cart Is Empty');
       localStorage.setItem('localCart',JSON.stringify([data]))
       
     } else {
-      console.warn('Default Local Cart');
-      cartData = JSON.parse(localCart)
+      console.warn('Else');
+      cartData = JSON.parse(localcart);
       cartData.push(data)
-      localStorage.setItem('localcart',JSON.stringify(cartData))
+      localStorage.setItem('localCart',JSON.stringify(cartData))
+
     }
   }
+
+
 
 }

@@ -38,17 +38,30 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
+  // addToCart() {
+  //   if(this.productData) {
+  //     this.productData.quantity = this.productQuantity;
+  //     console.warn(this.productData);
+  //     if(!localStorage.getItem('user')) { 
+  //       console.warn(this.productData);
+  //       this.productSvc.localAddToCart(this.productData)
+  //     } else {
+  //       console.warn('Filled');
+        
+  //     }
+      
+  //   }
+  // }
+
+  
   addToCart() {
     if(this.productData) {
       this.productData.quantity = this.productQuantity;
-      console.warn(this.productData);
-      if(!localStorage.getItem('user')) { 
-        console.warn(this.productData);
+      if(!localStorage.getItem('user')) {
+        // console.warn(this.productData);
         this.productSvc.localAddToCart(this.productData)
-      } else {
-        console.warn('Filled');
-        
       }
+      console.warn(this.productData);
       
     }
   }

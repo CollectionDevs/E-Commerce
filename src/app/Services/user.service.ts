@@ -70,7 +70,7 @@ export class UserService implements OnInit{
           this.userAuth.emit(false)
           // this.isLoggedError.next(true);
           localStorage.setItem('user',JSON.stringify(res.body))
-          this.route.navigate(['/'])
+          this.route.navigate(['seller-home'])
           
         } else {
           console.warn('Login Error');
