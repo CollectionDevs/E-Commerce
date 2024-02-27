@@ -39,7 +39,7 @@ export class SellerHomeComponent implements OnInit {
   
   list() {
     this.productSvc.productList().subscribe((result) => {
-      console.warn(result);
+      // console.warn(result);
       this.productList = result
     }) 
   }

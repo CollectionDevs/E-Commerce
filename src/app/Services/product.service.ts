@@ -83,10 +83,9 @@ export class ProductService {
     let cartData = [];
     let localCart = localStorage.getItem('localCart')
     if (!localCart) {
-      console.warn('User is not present / Localcart is Empty ');
+      // console.warn('User is not present / Localcart is Empty ');
       localStorage.setItem('localCart', JSON.stringify([data]))
     } else {
-      console.warn('User is not present / Localcart is Filled ');
       cartData = JSON.parse(localCart);
       cartData.push(data)
       localStorage.setItem('localCart', JSON.stringify(cartData))

@@ -20,12 +20,12 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     //Get Product ID
     let productId = this.activateRoute.snapshot.paramMap.get('productId')
-    console.warn(productId);
+    console.warn("Product ID - ",productId);
 
     //Check ProductIDwise Cart Data
     productId && this.productSvc.getProduct(productId).subscribe((result) => {
       this.productData = result;
-      console.warn(this.productData);
+      // console.warn('Product Data -> ',this.productData);
     })
 
     //Show Remove Cart Option if Current Item Already Added
@@ -58,15 +58,16 @@ export class ProductDetailsComponent implements OnInit {
   addToCart() {
     if(this.productData) {
       this.productData.quantity = this.productQuantity;
-      console.warn(this.productData);
+      // console.warn(this.productData);
       if(!localStorage.getItem('user')) { 
-        console.warn(this.productData);
+        // console.warn(this.productData);
         this.productSvc.localAddToCart(this.productData)
         this.removeCart = true;
 
       } else {
-        console.warn('Filled');
+        console.warn('User is Logged in');
         
+
       }
       
     }

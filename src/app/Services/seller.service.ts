@@ -49,16 +49,16 @@ export class SellerService {
   sellerLogin(data:any) {
     this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
     {observe:'response'}).subscribe((res:any) => {
-      console.warn('Enter into Login SVc');
+      // console.warn('Enter into Login SVc');
       
       if(res && res.body && res.body.length) {
         
-        console.warn("User logged in ",res);
+        // console.warn("User logged in ",res);
         localStorage.setItem('seller',JSON.stringify(res.body))
         this.route.navigate(['seller-home'])
 
       } else {
-        console.warn('Log in failed');
+        // console.warn('Log in failed');
         this.route.navigate(['seller-auth'])
         this.isLoginError.emit(true)
         

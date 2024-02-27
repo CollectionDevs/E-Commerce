@@ -57,6 +57,7 @@ export class HeaderComponent implements OnInit{
         } else if (localStorage.getItem('user') && route.url.includes('user')) {
           let userStore = localStorage.getItem('user');
           let userData = userStore && JSON.parse(userStore[0]);
+          let userName = userData.name;
           this.menuType = 'user';
         } else {
           this.menuType = 'default';
@@ -68,7 +69,7 @@ export class HeaderComponent implements OnInit{
     let cartData = localStorage.getItem('localCart')
     if(cartData) {
       this.cartItems = JSON.parse(cartData).length;
-      console.warn(this.cartItems);
+      // console.warn('Cart Items -> ',this.cartItems);
       
     }
 
@@ -137,7 +138,7 @@ export class HeaderComponent implements OnInit{
       localStorage.removeItem('user');
       this.route.navigate(['/user-auth'])
     } else {
-      console.warn('User is not logged in yet ');
+      // console.warn('User is not logged in yet ');
       
     }
   }

@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.productSvc.popularProducts().subscribe((data) => {
-      console.warn('Popular Products',data);
+      // console.warn('Popular Products',data);
       this.popularProducts = data;
     })
 
     this.productSvc.trendyProducts().subscribe((data) => {
-      console.warn('Trendy Products',data);
+      // console.warn('Trendy Products',data);
       this.trendyProducts = data;
     })
   }

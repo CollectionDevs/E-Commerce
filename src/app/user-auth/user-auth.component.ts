@@ -22,7 +22,7 @@ export class UserAuthComponent implements OnInit{
 
 
   onSignup(data:SignUp) {
-    console.warn(data);
+    // console.warn(data);
     this.userSvc.userSignup(data)
       
     
@@ -46,7 +46,7 @@ export class UserAuthComponent implements OnInit{
 
 
   onLogin(data:Login) {
-    console.warn(data);
+    // console.warn(data);
 
     this.userSvc.userLogin(data);
     this.userSvc.isLoginError.subscribe((isError) => {
