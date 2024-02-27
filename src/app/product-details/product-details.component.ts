@@ -12,17 +12,34 @@ export class ProductDetailsComponent implements OnInit {
 
   productData: undefined | Product;
   productQuantity: number = 1;
+  removeCart = false;
+
 
   constructor(private activateRoute: ActivatedRoute, private productSvc: ProductService) { }
 
   ngOnInit(): void {
+    //Get Product ID
     let productId = this.activateRoute.snapshot.paramMap.get('productId')
     console.warn(productId);
 
+    //Check ProductIDwise Cart Data
     productId && this.productSvc.getProduct(productId).subscribe((result) => {
-      console.warn(result);
       this.productData = result;
+      console.warn(this.productData);
     })
+
+    //Show Remove Cart Option if Current Item Already Added
+    //Bug
+    let localCart = localStorage.getItem('localCart');
+    if(productId && localCart) {
+      let items = JSON.parse(localCart);
+      items = items.filter((item:Product) => productId == item.id.toString())
+      if(items.length) {
+        this.removeCart = true;
+      } else {
+        this.removeCart = false;
+      }
+    }
 
   }
 
@@ -38,32 +55,40 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  // addToCart() {
-  //   if(this.productData) {
-  //     this.productData.quantity = this.productQuantity;
-  //     console.warn(this.productData);
-  //     if(!localStorage.getItem('user')) { 
-  //       console.warn(this.productData);
-  //       this.productSvc.localAddToCart(this.productData)
-  //     } else {
-  //       console.warn('Filled');
-        
-  //     }
-      
-  //   }
-  // }
-
-  
   addToCart() {
     if(this.productData) {
       this.productData.quantity = this.productQuantity;
-      if(!localStorage.getItem('user')) {
-        // console.warn(this.productData);
-        this.productSvc.localAddToCart(this.productData)
-      }
       console.warn(this.productData);
+      if(!localStorage.getItem('user')) { 
+        console.warn(this.productData);
+        this.productSvc.localAddToCart(this.productData)
+        this.removeCart = true;
+
+      } else {
+        console.warn('Filled');
+        
+      }
       
     }
   }
 
+  
+  // addToCart() {
+  //   if(this.productData) {
+  //     this.productData.quantity = this.productQuantity;
+  //     if(!localStorage.getItem('user')) {
+  //       // console.warn(this.productData);
+  //       this.productSvc.localAddToCart(this.productData)
+  //       this.removeCart = true;
+  //     }
+  //     console.warn(this.productData,"+++++++++++++++++++++++++++++");
+      
+  //   }
+  // }
+
+
+  removeToCart(productId:number) {
+    this.productSvc.removeFromCart(productId);
+    this.removeCart = false; 
+  }
 }

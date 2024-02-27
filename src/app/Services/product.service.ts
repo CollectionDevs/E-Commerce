@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Product } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+  cartData = new EventEmitter<Product[] | []>()
 
   constructor(private http: HttpClient) { }
 
@@ -27,9 +29,9 @@ export class ProductService {
     return this.http.get<Product>(`http://localhost:3000/products/${id}`)
   }
 
-  updateProduct(product:Product) {
+  updateProduct(product: Product) {
     console.log(product);
-    return this.http.put<Product>(`http://localhost:3000/products/${product.id}`,product)
+    return this.http.put<Product>(`http://localhost:3000/products/${product.id}`, product)
   }
 
   popularProducts() {
@@ -41,7 +43,7 @@ export class ProductService {
 
   }
 
-  searchProducts(query:string) {
+  searchProducts(query: string) {
     return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`)
   }
 
@@ -51,7 +53,7 @@ export class ProductService {
   //   if(!localCart) {
   //     console.warn('Local Cart ');
   //     localStorage.setItem('localCart',JSON.stringify([data]))
-      
+
   //   } else {
   //     cartData = JSON.parse(localCart)
   //     cartData.push(data)
@@ -69,7 +71,7 @@ export class ProductService {
   //   if(!localCart) {
   //     console.warn('Local Cart ');
   //     localStorage.setItem('localCart',JSON.stringify([data]))
-      
+
   //   } else {
   //     cartData = JSON.parse(localCart);
   //     cartData.push(data);
@@ -77,22 +79,36 @@ export class ProductService {
   //   }
   // }
 
-  localAddToCart(data:Product) {
+  localAddToCart(data: Product) {
     let cartData = [];
-    let localcart = localStorage.getItem('localCart')
-    if(!localcart) {
-      console.warn('Local Cart Is Empty');
-      localStorage.setItem('localCart',JSON.stringify([data]))
-      
+    let localCart = localStorage.getItem('localCart')
+    if (!localCart) {
+      console.warn('User is not present / Localcart is Empty ');
+      localStorage.setItem('localCart', JSON.stringify([data]))
     } else {
-      console.warn('Else');
-      cartData = JSON.parse(localcart);
+      console.warn('User is not present / Localcart is Filled ');
+      cartData = JSON.parse(localCart);
       cartData.push(data)
-      localStorage.setItem('localCart',JSON.stringify(cartData))
-
+      localStorage.setItem('localCart', JSON.stringify(cartData))
     }
+
+    //Update Header Cart() After Adding Item
+    this.cartData.emit(cartData)
   }
 
 
+  //bug
+  removeFromCart(productId: number) {
+    let localCart = localStorage.getItem('localCart');
+    if (localCart) {
+      let items: Product[] = JSON.parse(localCart);
+      items = items.filter((item:Product) => productId !== item.id);
+      // console.warn(items);
+      localStorage.setItem('localCart', JSON.stringify(items));
+
+      //Update Header Cart() After Removing Item
+      this.cartData.emit(items)   
+    }
+  }
 
 }

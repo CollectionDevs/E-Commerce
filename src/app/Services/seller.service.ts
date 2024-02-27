@@ -28,7 +28,7 @@ export class SellerService {
   // }
  
   sellerSignUp(data:SignUp) {
-   this.http.post(`http://localhost:3000/seller-auth`,data,{observe:'response'})
+   this.http.post(`http://localhost:3000/seller`,data,{observe:'response'})
     .subscribe((res) => {
       // this.isLoggedIn.next(true);
       localStorage.setItem('seller',JSON.stringify(res.body))
@@ -47,7 +47,7 @@ export class SellerService {
 
 
   sellerLogin(data:any) {
-    this.http.get(`http://localhost:3000/seller-auth?email=${data.email}&password=${data.password}`,
+    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
     {observe:'response'}).subscribe((res:any) => {
       console.warn('Enter into Login SVc');
       

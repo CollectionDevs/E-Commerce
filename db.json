@@ -1,43 +1,13 @@
 {
   "seller": [
     {
-      "name": "Namrata",
-      "password": "Namrata",
-      "email": "namrata",
-      "id": 1
-    },
-    {
       "name": "Harshavardhan",
-      "password": "Harshavardhan",
-      "email": "Harshavardhan",
-      "id": 2
-    }
-  ],
-  "seller-auth": [
-    {
-      "name": "1",
-      "password": "1",
-      "email": "1",
-      "id": 0
-    },
-    {
-      "name": "Harshavardhan",
-      "password": "12345",
       "email": "h@gmail.com",
-      "id": 1
-    },
-    {
-      "email": "namrata@gmail.com",
       "password": "12345",
-      "id": 2
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 3
+      "id": 1
     }
   ],
+  "seller-auth": [],
   "products": [
     {
       "name": "APPLE",
@@ -124,27 +94,9 @@
   "user": [
     {
       "name": "Namrata ",
-      "email": "namrata@gmail.com",
+      "email": "n@gmail.com",
       "password": "12345",
       "id": 1
-    },
-    {
-      "name": "Harshavardhan",
-      "email": "h@gmail.com",
-      "password": "12345",
-      "id": 2
-    },
-    {
-      "name": "Gangadhar",
-      "email": "g@gmail.com",
-      "password": "12345",
-      "id": 4
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 5
     }
   ]
 }
